@@ -40,7 +40,7 @@ public class CitizenController : ControllerBase
     
     [Route("/citizens/getAllCitizens")]
     [HttpGet]
-    public IEnumerable<CitizenModel> GetAllEmployees([FromQuery] string sex, [FromQuery] uint ageFrom, [FromQuery] uint ageTo)
+    public IEnumerable<CitizenModel> GetAllEmployees([FromQuery]string sex = "all", [FromQuery]uint ageFrom = 0, [FromQuery]uint ageTo = 0)
     {
         return _service.FindCitizens(sex, ageFrom, ageTo);
     }

@@ -1,6 +1,7 @@
 using DAL.Models;
 using DAL.DbContexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace DAL.Repositories;
 
@@ -12,18 +13,18 @@ public class UserRepository : IRepository
         _context = context;
     }
     
-    public async Task<CitizenModel> Create(CitizenModel citizen)
+    public CitizenModel Create(CitizenModel citizen)
     {
-        await _context.Citizens.AddAsync(citizen);
-        await _context.SaveChangesAsync();
+        _context.Citizens.Add(citizen);
+        _context.SaveChanges();
         return citizen;
     }
 
-    public async Task<IEnumerable<CitizenModel?>> FindAll(string sex = "", uint ageFrom = 0, uint ageTo = 0)
+    public async Task<IEnumerable<CitizenModel?>> FindAll(string sex, uint ageFrom, uint ageTo)
         => await _context.Citizens
-            .Where(x => x.Sex == sex)
-            .Where(x => x.Age >= ageFrom)
-            .Where(x => x.Age <= ageTo)
+            .Where(x => x.Sex == sex || sex == "all")
+            .Where(x => x.Age >= ageFrom || ageFrom == 0)
+            .Where(x => x.Age <= ageTo || ageTo == 0)
             .ToArrayAsync();
 
     public async Task<CitizenModel?> FindById(string id)

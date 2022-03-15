@@ -20,13 +20,11 @@ public class CitizenService : ICitizenService
     {
         var dtos = JsonCitizen.CitizensDTOS(url);
         foreach (var d in dtos)
-        {
             _repository.Create(new CitizenModel(d));
-        }
         return dtos;
     }
 
-    public IEnumerable<CitizenModel?> FindCitizens(string sex = "", uint ageFrom = 0, uint ageTo = 0)
+    public IEnumerable<CitizenModel?> FindCitizens(string sex, uint ageFrom = 0, uint ageTo = 0)
         => _repository.FindAll(sex, ageFrom, ageTo).Result;
 
     public CitizenModel? FindById(string id)

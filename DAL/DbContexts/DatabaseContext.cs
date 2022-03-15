@@ -13,7 +13,7 @@ public sealed class DatabaseContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<CitizenModel>().ToTable("Citinzens");
+        modelBuilder.Entity<CitizenModel>().ToTable("Citizens");
         base.OnModelCreating(modelBuilder);
     }
 }
