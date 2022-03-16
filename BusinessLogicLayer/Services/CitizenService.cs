@@ -20,9 +20,9 @@ public class CitizenService : ICitizenService
         return extractedDtos;
     }
 
-    public async Task<IEnumerable<CitizenModel?>> FindCitizens(string sex, uint ageFrom = 0, uint ageTo = 0)
-        => await _repository.FindAll(sex, ageFrom, ageTo);
+    public Task<IEnumerable<CitizenModel?>> FindCitizens(string sex, uint ageFrom = 0, uint ageTo = 0)
+        => _repository.FindAll(sex, ageFrom, ageTo);
 
-    public async Task<CitizenModel?> FindById(string id)
-        => await _repository.FindById(id);
+    public Task<CitizenModel?> FindById(string id)
+        => _repository.FindById(id);
 }
