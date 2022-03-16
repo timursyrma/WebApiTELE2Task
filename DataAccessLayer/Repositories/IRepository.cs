@@ -1,6 +1,6 @@
-using DAL.Models;
+using DataAccessLayer.Models;
 
-namespace DAL.Repositories;
+namespace DataAccessLayer.Repositories;
 
 public interface IRepository
 {

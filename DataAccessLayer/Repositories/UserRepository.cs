@@ -1,9 +1,8 @@
-using DAL.Models;
-using DAL.DbContexts;
+using DataAccessLayer.DbContexts;
+using DataAccessLayer.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 
-namespace DAL.Repositories;
+namespace DataAccessLayer.Repositories;
 
 public class UserRepository : IRepository
 {

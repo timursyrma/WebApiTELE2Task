@@ -1,7 +1,7 @@
+using DataAccessLayer.Models;
 using Microsoft.EntityFrameworkCore;
-using DAL.Models;
 
-namespace DAL.DbContexts;
+namespace DataAccessLayer.DbContexts;
 public sealed class DatabaseContext : DbContext
 {
     public DatabaseContext(DbContextOptions options) : base(options)
