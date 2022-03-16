@@ -7,15 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Citizen\GetAllCitizens.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Citizen\GetAllCitizens.cshtml" />
     </ItemGroup>
 
 </Project>

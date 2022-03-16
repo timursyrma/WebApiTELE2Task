@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{87B1C0F0-E604-4B23-AB35-0AD10992D870}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1B8FF071-7F58-4AA0-A018-43BAB96E4E3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E3D9BE7-40EE-4567-A6B8-C80AE18E0C46} = {6E3D9BE7-40EE-4567-A6B8-C80AE18E0C46}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{03E3F57A-24BE-42DF-8E38-A4BB29DE3D68}"
 EndProject
