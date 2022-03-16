@@ -1,12 +1,11 @@
 using System.Text.Json.Serialization;
-using DAL.Models;
 
-namespace DAL.DTO;
+namespace BusinessLogicLayer.DTO;
 
-public class CitizenDTO
+public class CitizenMainDto
 {
     [JsonConstructor]
-    public CitizenDTO(string id, string name, string sex)
+    public CitizenMainDto(string id, string name, string sex)
     {
         if (string.IsNullOrWhiteSpace(id))
         {
