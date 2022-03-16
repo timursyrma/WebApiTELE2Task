@@ -1,4 +1,6 @@
-namespace Reports.Server
+using BusinessLogicLayer;
+
+namespace PresentationLayer
 {
     public class Program
     {

@@ -1,11 +1,11 @@
-using DAL.DbContexts;
-using DAL.Repositories;
+using BusinessLogicLayer.Services;
+using DataAccessLayer.DbContexts;
+using DataAccessLayer.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using Server.Services;
 
-namespace Reports.Server
+namespace BusinessLogicLayer
 {
     public class Startup
     {
@@ -36,6 +36,7 @@ namespace Reports.Server
             });
             services.AddScoped<ICitizenService, CitizenService>();
             services.AddScoped<IRepository, UserRepository>();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +46,7 @@ namespace Reports.Server
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reports.Server v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reports.BusinessLogicLayer v1"));
             }
 
             app.UseHttpsRedirection();
